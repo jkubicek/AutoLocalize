@@ -1,8 +1,10 @@
-_What this does_
+What this does
+==============
 
 This script uses Google Language APIs to translate your `Localizable.strings` files into whatever languages you (and Google) would like to support. 
 
-_How to use it_
+How to use it
+=============
 
 Visit the Google API Console at https://code.google.com/apis/console/. Register your version of the script as a new project. Google will give you an API key. Take this key, put it into `config.yaml.example`, and remove the `example` from the end of the filename. Google has a 100,000 query limit on it's language API, which is way more than you'll need, I think. Technically Google does not support automated translation scripts like this one, so your API key may get banned. If you've already got one you're using, don't use it.
 
@@ -14,7 +16,8 @@ Every laguange you would like to translate into should have an associated `.lpro
 
 Run the script from the directory containing your source and destination `.lproj` folders, and the keys will be used to automatically translate your strings.
 
-_Bugs_
+Bugs
+====
 
  * The script doesn't correctly handle non-alphanumeric characters.
  * There is the destination files are overwritten by default, there is no support for partially translated files, so be carefull if you are adding new strings to your source file.
