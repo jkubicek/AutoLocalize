@@ -6,7 +6,7 @@ This script uses Google Language APIs to translate your `Localizable.strings` fi
 How to use it
 =============
 
-Visit the Google API Console at https://code.google.com/apis/console/. Register your version of the script as a new project. Google will give you an API key. Take this key, put it into `config.yaml.example`, and remove the `example` from the end of the filename. Google has a 100,000 query limit on it's language API, which is way more than you'll need, I think. Technically Google does not support automated translation scripts like this one, so your API key may get banned. If you've already got one you're using, don't use it.
+Visit the [Google API Console][2]. Register your version of the script as a new project. Google will give you an API key. Take this key, put it into `config.yaml.example`, and remove the `example` from the end of the filename. Google has a 100,000 query limit on it's language API, which is way more than you'll need, I think. Technically Google does not support automated translation scripts like this one, so your API key may get banned. If you've already got one you're using, don't use it.
 
 To start with, you should have already set your project up for localization by using Apple's `NSLocalizedString(@"key", @"This is a comment")` macro and extracted those keys using the [genstrings][1] tool.
 
@@ -26,3 +26,4 @@ Bugs
 
 
 [1]: http://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/LoadingResources/Strings/Strings.html%23//apple_ref/doc/uid/10000051i-CH6-SW5
+[2]: https://code.google.com/apis/console/
