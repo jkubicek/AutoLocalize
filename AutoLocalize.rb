@@ -12,9 +12,6 @@ source_path = './'
 google_api_host = 'www.googleapis.com'
 google_api_path = '/language/translate/v2?'
 
-#set up the encoding converter
-converter = Iconv.new("UTF-16LE", "UTF-8")
-
 class Phrase
     attr_accessor :key, :comment
     
@@ -65,7 +62,7 @@ p "Destination strings files: #{dest_files}"
 #############
 
 #Open source file and pull out strings
-f = File.open(source_file, "r:UTF-16LE:UTF-8")
+f = File.open(source_file, "r:UTF-16LE")
 
 phrases = []
 
@@ -110,10 +107,10 @@ dest_files.each {|dest_file|
     p "******************************"
     p "Writing translated phrases to \"#{dest_file}\""
         phrases.each {|phrase|
-            file.write converter.iconv("/* #{phrase.comment} */\n")
+            file.write "/* #{phrase.comment} */\n"
             trans_string = phrase.translation_for(target_lang)
-            file.write converter.iconv("\"#{phrase.key}\" = \"#{trans_string}\";\n")
-            file.write converter.iconv("\n")
+            file.write "\"#{phrase.key}\" = \"#{trans_string}\";\n"
+            file.write "\n"
         }
     }
 }
