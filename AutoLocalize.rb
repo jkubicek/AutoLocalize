@@ -62,7 +62,7 @@ p "Destination strings files: #{dest_files}"
 #############
 
 #Open source file and pull out strings
-f = File.open(source_file, "r:UTF-16LE")
+f = File.open(source_file, "rb:UTF-16:UTF-8")
 
 phrases = []
 
@@ -103,7 +103,7 @@ dest_files.each {|dest_file|
             }
         }
     }
-    File.open(dest_file, "w:UTF-16LE") {|file|
+    File.open(dest_file, "w:UTF-16") {|file|
     p "******************************"
     p "Writing translated phrases to \"#{dest_file}\""
         phrases.each {|phrase|
