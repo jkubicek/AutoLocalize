@@ -20,6 +20,7 @@ Bugs
 ====
 
  * The script doesn't correctly handle non-alphanumeric characters.
+ * Xcode requires that a BOM be present in the output files, at this point tis is added manually. 
  * There is the destination files are overwritten by default, there is no support for partially translated files, so be carefull if you are adding new strings to your source file.
  * I'm sure there's a ton more problems, this is the first draft. Good luck!
 
