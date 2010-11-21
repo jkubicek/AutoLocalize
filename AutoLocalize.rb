@@ -110,7 +110,7 @@ dest_files.each {|dest_file|
     p "******************************"
     p "Writing translated phrases to \"#{dest_file}\""
         phrases.each {|phrase|
-            file.write converter.iconv("\\* #{phrase.comment} *\\\n")
+            file.write converter.iconv("/* #{phrase.comment} */\n")
             trans_string = phrase.translation_for(target_lang)
             file.write converter.iconv("\"#{phrase.key}\" = \"#{trans_string}\";\n")
             file.write converter.iconv("\n")
